@@ -1,0 +1,15 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    margin-top: 0px;
+}
+.App{
+    width: 100vh;
+    height: 100vh;
+    background-color: aqua;
+    display: flex;
+}
+
+
+
+
