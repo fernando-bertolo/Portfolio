@@ -10,3 +10,13 @@ body {
     display: flex;
     background-color: #E4E9F7;
   }
+
+@media(max-width: 768px){
+  .App{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #E4E9F7;
+  }
+}

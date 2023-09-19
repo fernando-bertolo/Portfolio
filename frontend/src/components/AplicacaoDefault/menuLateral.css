@@ -40,7 +40,6 @@
     background-color: #695CFE;
     border: 1px solid #695CFE;
     border-radius: 10px;
-    
 }
 .menu-opcoes > div{
     width: 90%;
@@ -96,6 +95,9 @@
         justify-content: center;
         align-items: center;
         flex-direction: row;
+    }
+    .menu-opcoes > div:hover{
+        display: none;
     }
 
     .div-menu-end{

@@ -5,6 +5,7 @@ function Home() {
   return (
     <div className="App">
       <Menu/>
+      <h1>Home</h1>
     </div>
   );
 }
