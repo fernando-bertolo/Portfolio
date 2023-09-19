@@ -1,0 +1,12 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    margin-top: 0px;
+    font-family: 'Rajdhani', sans-serif;
+  }
+  .App {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    background-color: #E4E9F7;
+  }

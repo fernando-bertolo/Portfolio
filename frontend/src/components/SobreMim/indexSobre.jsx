@@ -1,13 +1,13 @@
 import Menu from "../AplicacaoDefault/menuLateral.jsx";
 import "../AplicacaoDefault/appDefault.css";
 
-function Contato() {
+function Sobre() {
     return(
         <div className="App">
             <Menu/>
-            <h1>Contato</h1>
+            <h1>Sobre Mim</h1>
         </div>
     );
 }
 
-export default Contato;
+export default Sobre;

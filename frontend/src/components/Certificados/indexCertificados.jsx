@@ -1,13 +1,13 @@
 import Menu from "../AplicacaoDefault/menuLateral.jsx";
 import "../AplicacaoDefault/appDefault.css";
 
-function Contato() {
+function Certificados() {
     return(
         <div className="App">
             <Menu/>
-            <h1>Contato</h1>
+            <h1>Certificados</h1>
         </div>
     );
 }
 
-export default Contato;
+export default Certificados;
