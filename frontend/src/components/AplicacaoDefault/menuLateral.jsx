@@ -21,32 +21,26 @@ function Menu() {
   
         <div className="menu-opcoes">
           <div>
-            <AiOutlineHome className="icones-menu"/>
-            <Link className="menu-link" to={"/"}>Home</Link>
+            <Link className="menu-link" to={"/"}><AiOutlineHome className="icones-menu"/>Home</Link>
           </div>
           <div>
-            <BiUserCircle className="icones-menu"/>
-            <Link className="menu-link" to={"/sobre-Mim"}>Sobre Mim</Link>
+            <Link className="menu-link" to={"/sobre-Mim"}><BiUserCircle className="icones-menu"/>Sobre Mim</Link>
           </div>
   
-          <div>
-            <FaRegAddressCard className="icones-menu"/>
-            <Link className="menu-link" to={"/curriculo"}>Curriculo</Link>
+          <div>        
+            <Link className="menu-link" to={"/curriculo"}><FaRegAddressCard className="icones-menu"/>Curriculo</Link>
           </div>
   
-          <div>
-            <BiMedal className="icones-menu"/>
-            <Link className="menu-link" to={"/certificados"}>Certificados</Link>
+          <div>               
+            <Link className="menu-link" to={"/certificados"}><BiMedal className="icones-menu"/>Certificados</Link>
           </div>
           
           <div>
-            <LuCoffee className="icones-menu"/>
-            <Link className="menu-link" to={"/projetos"}>Projetos</Link>
+            <Link className="menu-link" to={"/projetos"}><LuCoffee className="icones-menu"/>Projetos</Link>
           </div>
           
           <div>
-            <HiOutlineEnvelope className="icones-menu"/>
-            <Link className="menu-link" to={"/contato"}>Contato</Link>
+            <Link className="menu-link" to={"/contato"}><HiOutlineEnvelope className="icones-menu"/>Contato</Link>
           </div>
         </div>
 

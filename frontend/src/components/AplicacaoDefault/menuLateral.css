@@ -31,6 +31,10 @@
 .menu-link{
     color: #FFF;
     text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 .menu-opcoes > div:hover{
     background-color: #695CFE;
@@ -42,9 +46,8 @@
     width: 90%;
     height: 12%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     margin: 0px 0px 10px;
 }
 
