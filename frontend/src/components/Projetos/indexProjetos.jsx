@@ -1,12 +1,12 @@
-import Menu from "../AplicacaoDefault/menuLateral";
-import "../AplicacaoDefault/appDefault.css";
+import Menu from "../MenuLateral/menuLateral";
+import {App} from "../Home/indexHome";
 
 function Projetos() {
     return(
-        <div className="App">
+        <App>
             <Menu/>
             <h1>Projetos</h1>
-        </div>
+        </App>
     );
 }
 

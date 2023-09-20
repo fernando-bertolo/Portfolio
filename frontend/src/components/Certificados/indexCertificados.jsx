@@ -1,12 +1,12 @@
-import Menu from "../AplicacaoDefault/menuLateral.jsx";
-import "../AplicacaoDefault/appDefault.css";
+import Menu from "../MenuLateral/menuLateral.jsx";
+import {App} from "../Home/indexHome.jsx";
 
 function Certificados() {
     return(
-        <div className="App">
+        <App>
             <Menu/>
             <h1>Certificados</h1>
-        </div>
+        </App>
     );
 }
 
