@@ -17,21 +17,12 @@ export const App = styled.div`
   }
 `
 
-const Body = styled.body`
-  margin: 0px;
-  padding: 0px;
-  margin-top: 0px;
-  font-family: 'Calibri', sans-serif;
-`
-
 function Home() {
   return (
-    <Body>
       <App>
         <Menu/>
         <h1>Home</h1>
       </App>
-    </Body>
   );
 }
 

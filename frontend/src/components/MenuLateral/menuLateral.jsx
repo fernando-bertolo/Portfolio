@@ -22,7 +22,7 @@ const size = {
   desktop: "2560px"
 }
 
-export const device = {
+const device = {
   mobile: `(max-width: ${size.mobile})`,
   tablet: `(max-width: ${size.tablet})`,
   laptop: `(max-width: ${size.laptop})`,
@@ -219,6 +219,8 @@ function Menu() {
 
     const [OpenMenu, setOpenMenu] = useState(false);
     const visualizarMenu = () => setOpenMenu(!OpenMenu);
+    
+
     console.log(setOpenMenu);
 
     return(
@@ -232,7 +234,7 @@ function Menu() {
         <DivMenuOpcoes>
           <DivBotoes>
             <IconeMenuMobile onClick={visualizarMenu}/>
-            {OpenMenu && <MenuMobile active={setOpenMenu}/>}
+            {OpenMenu && <MenuMobile active={OpenMenu} setActive={setOpenMenu}/>}
           </DivBotoes>
 
           <DivBotoes>
