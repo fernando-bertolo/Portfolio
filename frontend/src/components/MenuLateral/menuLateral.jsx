@@ -10,8 +10,8 @@ import {FaGithubSquare} from "react-icons/fa";
 import {AiOutlineInstagram} from "react-icons/ai";
 import {IoMdMenu} from "react-icons/io";
 import {styled} from "styled-components";
-import {useState} from "react";
-import MenuMobile from "./MenuLateralMobile/MenuMobile.jsx"; 
+
+
 
 
 // Setando variaveis dos tamanhos dos dispositivos para responsividade
@@ -110,17 +110,17 @@ const LinkButton = styled(Link)`
 
 
 //Icone Menu Mobile
-const IconeMenuMobile = styled(IoMdMenu)`
-  display: none;
+// const IconeMenuMobile = styled(IoMdMenu)`
+//   display: none;
 
-  @media (${device.tablet}){
-    display: flex;
-    color: #FFF;
-    height: 2rem;
-    width: 2rem;
-    pointer-events: auto;
-  }
-`;
+//   @media (${device.tablet}){
+//     display: flex;
+//     color: #FFF;
+//     height: 2rem;
+//     width: 2rem;
+//     pointer-events: auto;
+//   }
+// `;
 
 //Icones Menu Lateral
 
@@ -215,13 +215,7 @@ const ParagrafoCopy = styled.p`
   color: gray;
 `;
 
-function Menu() {
-
-    const [OpenMenu, setOpenMenu] = useState(false);
-    const visualizarMenu = () => setOpenMenu(!OpenMenu);
-    
-
-    console.log(setOpenMenu);
+function Menu({setOpenMenu}) {
 
     return(
       <NavMenuContainer>
@@ -232,10 +226,9 @@ function Menu() {
         </DivNomeLateral>
 
         <DivMenuOpcoes>
-          <DivBotoes>
-            <IconeMenuMobile onClick={visualizarMenu}/>
-            {OpenMenu && <MenuMobile active={OpenMenu} setActive={setOpenMenu}/>}
-          </DivBotoes>
+          {/* <DivBotoes>
+            <IconeMenuMobile onClick={() => setOpenMenu(true)}/>
+          </DivBotoes> */}
 
           <DivBotoes>
             <LinkButton to={"/"}><IconeHome/>Home</LinkButton>

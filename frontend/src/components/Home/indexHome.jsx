@@ -1,5 +1,7 @@
 import Menu from "../MenuLateral/menuLateral.jsx";
 import {styled} from "styled-components";
+import { useState } from "react";
+import MenuMobile from "../MenuLateral/MenuLateralMobile/MenuMobile.jsx"; 
 
 
 export const App = styled.div`
@@ -18,9 +20,13 @@ export const App = styled.div`
 `
 
 function Home() {
+
+  const [OpenMenu, setOpenMenu] = useState(true);
+
   return (
       <App>
-        <Menu/>
+        <Menu setOpenMenu={setOpenMenu}/>
+        <MenuMobile OpenMenu={OpenMenu} setOpenMenu={setOpenMenu}/>
         <h1>Home</h1>
       </App>
   );

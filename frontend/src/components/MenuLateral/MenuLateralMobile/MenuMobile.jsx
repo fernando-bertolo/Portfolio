@@ -1,6 +1,5 @@
 import {IoMdMenu} from "react-icons/io";
-import styled from "styled-components";
-
+import {styled, css} from "styled-components";
 
 const size = {
     mobile: "320px",
@@ -17,17 +16,6 @@ const size = {
   }
 
 
-const IconeMenuMobile = styled(IoMdMenu)`
-    display: none;
-
-    @media (${device.tablet}){
-        display: flex;
-        color: #FFF;
-        height: 2rem;
-        width: 2rem;
-        pointer-events: auto;
-    }    
-`
 
 const DivMenuMobile = styled.div`
     height: 100vh;
@@ -39,33 +27,49 @@ const DivMenuMobile = styled.div`
     display: flex;
     justify-content: flex-end;
     border-radius: 0px 10px 10px;
-    left: ${props => props.MenuMobile ? "0" : "-100"};
-    animation: visualizarMenuMobile .4s;
+    pointer-events: none;
+    opacity: 0;
 
-    @keyframes visualizarMenuMobile {
-        from {
-            opacity: 0;
-            width: 0px;
-        }
-        to {
-            opacity: 1;
-            width: 300px;
-        }
-        
-    }
+    ${({OpenMenu}) => OpenMenu && css`
+        opacity: 1;
+        background-color: red;
+        pointer-events: auto;
+    `}
+    > svg{
+        color: #FFF;
+        width: 2rem;
+        height: 2rem;
+        position: absolute; 
+        top: 1rem;
+        right: 1rem;
+    } 
+`;
+
+const IconeMenuMobile = styled(IoMdMenu)`
+  display: none;
+
+  @media (${device.tablet}){
+    display: flex;
+    color: #FFF;
+    height: 2rem;
+    width: 2rem;
+    pointer-events: auto;
+  }
 `;
 
 
 
-function MenuMobile({active, setActive}){
-    const closeMenu = () => {
-        setActive(false);
-      }
-    console.log(closeMenu);
+function MenuMobile({OpenMenu, setOpenMenu }){
+
     return(
-            <DivMenuMobile MenuMobile={active}>
-                <IconeMenuMobile onClick={closeMenu}/>           
-            </DivMenuMobile>             
+        <>
+            <IconeMenuMobile onClick={() => setOpenMenu(true)}/>
+            <DivMenuMobile OpenMenu={OpenMenu}>
+                <IoMdMenu onClick={() => setOpenMenu(false)}/>           
+            </DivMenuMobile>  
+
+        </>
+           
     );
 }
 
