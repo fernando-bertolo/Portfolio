@@ -51,8 +51,10 @@ const DivNomeLateral = styled.div`
   width: 100%;
   height: 10%;
   display: flex;
+  background-color: #695CFE;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
+  flex-direction: column;
 
   @media(${device.tablet}){
     display: none;
@@ -93,7 +95,6 @@ const DivBotoes = styled.div`
       display: none;
     }
   }
-
 `;
 
 const LinkButton = styled(Link)`
@@ -158,8 +159,9 @@ const DivMenuEnd = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 
-  @media(${device.laptop}){
+  @media(${device.tablet}){
     display: none;
   }
 `;
@@ -167,7 +169,7 @@ const DivMenuEnd = styled.div`
 const DivRedesSociais = styled.div`
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 0.7rem;
 `;
 
 
@@ -197,10 +199,11 @@ const DivCopy = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
 `;
 
 const ParagrafoCopy = styled.p`
-  font-size: 0.9rem;
+  font-size: max(15px, 0.5rem);
   color: gray;
 `;
 
@@ -217,15 +220,23 @@ const IconeMenuMobile = styled(IoMdMenu)`
   }
 `;
 
+const PrimeiroNome = styled.p`
+  font-family: 'Courier New', Courier, monospace;
+  
+`;
+
+const SegundoNome = styled.p`
+  font-family: 'Courier New', Courier, monospace;
+`;
+
 function Menu({setOpenMenu}) {
 
 
     return(
       <NavMenuContainer>
         <DivNomeLateral>
-          <p>
-            Fernando Bertolo
-          </p>
+          <PrimeiroNome>Fernando</PrimeiroNome>
+          <SegundoNome>Bertolo</SegundoNome>
         </DivNomeLateral>
         <IconeMenuMobile onClick={() => setOpenMenu(true)}/>
 

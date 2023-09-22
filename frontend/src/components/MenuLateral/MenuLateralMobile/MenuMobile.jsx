@@ -29,12 +29,25 @@ const DivMenuMobile = styled.div`
     border-radius: 0px 10px 10px;
     pointer-events: none;
     opacity: 0;
+    
 
     ${({OpenMenu}) => OpenMenu && css`
-        opacity: 1;
-        background-color: #201B2C;
         pointer-events: auto;
+        opacity: 1;
+        animation: AnimatedOpenMenu .4s;
+
+        @keyframes AnimatedOpenMenu {
+          from {
+            width: 0px;
+            opacity: 0;
+
+          } to {
+            width: 40%;
+            opacity: 1;
+          }
+        }
     `}
+
     > svg{
         color: #FFF;
         width: 2rem;
@@ -45,17 +58,6 @@ const DivMenuMobile = styled.div`
     } 
 `;
 
-const IconeMenuMobile = styled(IoMdMenu)`
-  display: none;
-
-  @media (${device.tablet}){
-    display: flex;
-    color: #FFF;
-    height: 2rem;
-    width: 2rem;
-    pointer-events: auto;
-  }
-`;
 
 const DivListaOpcoes = styled.div`
   height: 100%;
@@ -66,12 +68,14 @@ const DivListaOpcoes = styled.div`
   align-items: center;
   flex-direction: column;
   gap: 1rem;
+
+
 `;
 
 const DivBotoesListagem = styled.div`
   display: flex;
   height: 2rem;
-  width: 50%;
+  width: 80%;
   justify-content: center;
   align-items: center;
   background-color: #514869;
@@ -90,7 +94,6 @@ function MenuMobile({OpenMenu, setOpenMenu }){
 
     return(
         <>
-            {/* <IconeMenuMobile onClick={() => setOpenMenu(true)}/> */}
             <DivMenuMobile OpenMenu={OpenMenu}>
                 <IoMdMenu onClick={() => setOpenMenu(false)}/>
                 <DivListaOpcoes>
