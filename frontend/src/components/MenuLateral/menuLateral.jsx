@@ -8,7 +8,6 @@ import {HiOutlineEnvelope} from "react-icons/hi2";
 import {AiOutlineLinkedin} from "react-icons/ai";
 import {FaGithubSquare} from "react-icons/fa";
 import {AiOutlineInstagram} from "react-icons/ai";
-import {IoMdMenu} from "react-icons/io";
 import {styled} from "styled-components";
 
 
@@ -109,19 +108,6 @@ const LinkButton = styled(Link)`
 `;
 
 
-//Icone Menu Mobile
-// const IconeMenuMobile = styled(IoMdMenu)`
-//   display: none;
-
-//   @media (${device.tablet}){
-//     display: flex;
-//     color: #FFF;
-//     height: 2rem;
-//     width: 2rem;
-//     pointer-events: auto;
-//   }
-// `;
-
 //Icones Menu Lateral
 
 const IconeHome = styled(AiOutlineHome)`
@@ -215,7 +201,7 @@ const ParagrafoCopy = styled.p`
   color: gray;
 `;
 
-function Menu({setOpenMenu}) {
+function Menu() {
 
     return(
       <NavMenuContainer>
@@ -226,10 +212,6 @@ function Menu({setOpenMenu}) {
         </DivNomeLateral>
 
         <DivMenuOpcoes>
-          {/* <DivBotoes>
-            <IconeMenuMobile onClick={() => setOpenMenu(true)}/>
-          </DivBotoes> */}
-
           <DivBotoes>
             <LinkButton to={"/"}><IconeHome/>Home</LinkButton>
           </DivBotoes>

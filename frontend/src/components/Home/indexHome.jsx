@@ -21,11 +21,11 @@ export const App = styled.div`
 
 function Home() {
 
-  const [OpenMenu, setOpenMenu] = useState(true);
+  const [OpenMenu, setOpenMenu] = useState(false);
 
   return (
       <App>
-        <Menu setOpenMenu={setOpenMenu}/>
+        <Menu/>
         <MenuMobile OpenMenu={OpenMenu} setOpenMenu={setOpenMenu}/>
         <h1>Home</h1>
       </App>

@@ -1,4 +1,5 @@
 import {IoMdMenu} from "react-icons/io";
+import { Link } from "react-router-dom";
 import {styled, css} from "styled-components";
 
 const size = {
@@ -19,7 +20,7 @@ const size = {
 
 const DivMenuMobile = styled.div`
     height: 100vh;
-    width: 300px;
+    width: 40%;
     position: fixed;
     background-color: #201B2C;
     top: 0px;
@@ -32,7 +33,7 @@ const DivMenuMobile = styled.div`
 
     ${({OpenMenu}) => OpenMenu && css`
         opacity: 1;
-        background-color: red;
+        background-color: #201B2C;
         pointer-events: auto;
     `}
     > svg{
@@ -57,6 +58,33 @@ const IconeMenuMobile = styled(IoMdMenu)`
   }
 `;
 
+const DivListaOpcoes = styled.div`
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 4rem;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+`;
+
+const DivBotoesListagem = styled.div`
+  display: flex;
+  height: 2rem;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  background-color: #514869;
+  border-radius: 10px;
+
+`;
+
+const LinkOpcoes = styled(Link)`
+  text-decoration: none;
+  color: #FFF;
+`;
+
 
 
 function MenuMobile({OpenMenu, setOpenMenu }){
@@ -65,7 +93,32 @@ function MenuMobile({OpenMenu, setOpenMenu }){
         <>
             <IconeMenuMobile onClick={() => setOpenMenu(true)}/>
             <DivMenuMobile OpenMenu={OpenMenu}>
-                <IoMdMenu onClick={() => setOpenMenu(false)}/>           
+                <IoMdMenu onClick={() => setOpenMenu(false)}/>
+                <DivListaOpcoes>
+                  <DivBotoesListagem>
+                    <LinkOpcoes to={"/"}>Home</LinkOpcoes>
+                  </DivBotoesListagem>
+
+                  <DivBotoesListagem>
+                    <LinkOpcoes to={"/sobre-Mim"}>Sobre Mim</LinkOpcoes>
+                  </DivBotoesListagem>
+
+                  <DivBotoesListagem>
+                    <LinkOpcoes to={"/curriculo"}>Curriculo</LinkOpcoes>
+                  </DivBotoesListagem>
+
+                  <DivBotoesListagem>
+                    <LinkOpcoes to={"/certificados"}>Certificados</LinkOpcoes>
+                  </DivBotoesListagem>
+
+                  <DivBotoesListagem>
+                    <LinkOpcoes to={"/projetos"}>Projetos</LinkOpcoes>
+                  </DivBotoesListagem>
+
+                  <DivBotoesListagem>
+                    <LinkOpcoes to={"/contato"}>Contato</LinkOpcoes>
+                  </DivBotoesListagem>
+                </DivListaOpcoes>    
             </DivMenuMobile>  
 
         </>
