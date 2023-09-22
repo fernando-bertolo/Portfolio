@@ -25,7 +25,7 @@ function Home() {
 
   return (
       <App>
-        <Menu/>
+        <Menu setOpenMenu={setOpenMenu}/>
         <MenuMobile OpenMenu={OpenMenu} setOpenMenu={setOpenMenu}/>
         <h1>Home</h1>
       </App>

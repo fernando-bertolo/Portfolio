@@ -9,7 +9,7 @@ function Certificados() {
     
     return(
         <App>
-            <Menu/>
+            <Menu setOpenMenu={setOpenMenu}/>
             <MenuMobile OpenMenu={OpenMenu} setOpenMenu={setOpenMenu}/>
             <h1>Certificados</h1>
         </App>

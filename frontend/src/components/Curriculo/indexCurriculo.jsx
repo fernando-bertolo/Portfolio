@@ -9,7 +9,7 @@ function Curriculo() {
 
     return(
         <App>
-            <Menu/>
+            <Menu setOpenMenu={setOpenMenu}/>
             <MenuMobile OpenMenu={OpenMenu} setOpenMenu={setOpenMenu}/>
             <h1>Curriculo</h1>
         </App>

@@ -9,7 +9,7 @@ function Projetos() {
 
     return(
         <App>
-            <Menu/>
+            <Menu setOpenMenu={setOpenMenu}/>
             <MenuMobile OpenMenu={OpenMenu} setOpenMenu={setOpenMenu}/>
             <h1>Projetos</h1>
         </App>

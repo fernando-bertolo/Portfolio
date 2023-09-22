@@ -26,7 +26,6 @@ const DivMenuMobile = styled.div`
     top: 0px;
     left: 0px;
     display: flex;
-    justify-content: flex-end;
     border-radius: 0px 10px 10px;
     pointer-events: none;
     opacity: 0;
@@ -91,7 +90,7 @@ function MenuMobile({OpenMenu, setOpenMenu }){
 
     return(
         <>
-            <IconeMenuMobile onClick={() => setOpenMenu(true)}/>
+            {/* <IconeMenuMobile onClick={() => setOpenMenu(true)}/> */}
             <DivMenuMobile OpenMenu={OpenMenu}>
                 <IoMdMenu onClick={() => setOpenMenu(false)}/>
                 <DivListaOpcoes>

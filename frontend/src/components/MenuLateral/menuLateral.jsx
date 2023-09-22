@@ -8,6 +8,7 @@ import {HiOutlineEnvelope} from "react-icons/hi2";
 import {AiOutlineLinkedin} from "react-icons/ai";
 import {FaGithubSquare} from "react-icons/fa";
 import {AiOutlineInstagram} from "react-icons/ai";
+import {IoMdMenu} from "react-icons/io"
 import {styled} from "styled-components";
 
 
@@ -39,6 +40,8 @@ const NavMenuContainer = styled.nav`
   @media (${device.tablet}){
     width: 100%;
     height: 10vh;
+    display: flex;
+    align-items: center;
     box-shadow: 0 0 10px 2px;
   }
 `; 
@@ -201,7 +204,21 @@ const ParagrafoCopy = styled.p`
   color: gray;
 `;
 
-function Menu() {
+const IconeMenuMobile = styled(IoMdMenu)`
+  display: none;
+
+  @media (${device.tablet}){
+    display: flex;
+    color: #FFF;
+    margin-left: 1rem;
+    height: 2rem;
+    width: 2rem;
+    pointer-events: auto;
+  }
+`;
+
+function Menu({setOpenMenu}) {
+
 
     return(
       <NavMenuContainer>
@@ -210,6 +227,7 @@ function Menu() {
             Fernando Bertolo
           </p>
         </DivNomeLateral>
+        <IconeMenuMobile onClick={() => setOpenMenu(true)}/>
 
         <DivMenuOpcoes>
           <DivBotoes>

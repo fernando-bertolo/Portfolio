@@ -8,7 +8,7 @@ function Sobre() {
     const [OpenMenu, setOpenMenu] = useState(false);
     return(
         <App>
-            <Menu/>
+            <Menu setOpenMenu={setOpenMenu}/>
             <MenuMobile OpenMenu={OpenMenu} setOpenMenu={setOpenMenu}/>
             <h1>Sobre Mim</h1>
         </App>

@@ -10,7 +10,7 @@ function Contato() {
 
     return(
         <App>
-            <Menu/>
+            <Menu setOpenMenu={setOpenMenu}/>
             <MenuMobile OpenMenu={OpenMenu} setOpenMenu={setOpenMenu}/>
             <h1>Contato</h1>
         </App>
