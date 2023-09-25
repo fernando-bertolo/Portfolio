@@ -8,8 +8,9 @@ import {HiOutlineEnvelope} from "react-icons/hi2";
 import {AiOutlineLinkedin} from "react-icons/ai";
 import {FaGithubSquare} from "react-icons/fa";
 import {AiOutlineInstagram} from "react-icons/ai";
-import {IoMdMenu} from "react-icons/io"
+import {IoMdMenu} from "react-icons/io";
 import {styled} from "styled-components";
+
 
 
 
@@ -55,6 +56,7 @@ const DivNomeLateral = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  opacity: 1;
 
   @media(${device.tablet}){
     display: none;
