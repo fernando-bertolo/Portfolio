@@ -9,7 +9,8 @@ import {AiOutlineLinkedin} from "react-icons/ai";
 import {FaGithubSquare} from "react-icons/fa";
 import {AiOutlineInstagram} from "react-icons/ai";
 import {IoMdMenu} from "react-icons/io";
-import {styled} from "styled-components";
+import {AiOutlineCaretLeft} from "react-icons/ai";
+import {styled, css} from "styled-components";
 
 
 
@@ -23,7 +24,7 @@ const size = {
   desktop: "2560px"
 }
 
-const device = {
+export const device = {
   mobile: `(max-width: ${size.mobile})`,
   tablet: `(max-width: ${size.tablet})`,
   laptop: `(max-width: ${size.laptop})`,
@@ -34,7 +35,7 @@ const device = {
 //Estilização com styled-components
 
 const NavMenuContainer = styled.nav`
-  width: 10%;
+  width: 10vw;
   height: 100vh;
   background-color:#2F2841;
 
@@ -45,6 +46,22 @@ const NavMenuContainer = styled.nav`
     align-items: center;
     box-shadow: 0 0 10px 2px;
   }
+
+  ${({OpenMenuMain}) => OpenMenuMain && css`
+    pointer-events: auto;
+    animation: CloseMenuMain .4s;
+
+    @keyframes CloseMenuMain {
+      from{
+        width: 10vw;
+      } to{
+        width: 0vw;
+        position: fixed;
+      }
+    } 
+  
+  
+  `}
 `; 
 
 const DivNomeLateral = styled.div`
@@ -86,7 +103,7 @@ const DivBotoes = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0px 0px 10px;
+  margin: 0rem 0rem 0.8rem;
 
   &:hover{
     background-color: #695CFE;
@@ -104,9 +121,11 @@ const LinkButton = styled(Link)`
   font-size: 1rem;
   text-decoration: none;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap; //Dimensiona os elementos em telas menores
 
   @media(${device.tablet}){
     display: none;
@@ -205,8 +224,12 @@ const DivCopy = styled.div`
 `;
 
 const ParagrafoCopy = styled.p`
-  font-size: max(15px, 0.5rem);
+  font-size: 1rem;
   color: gray;
+
+  @media(${device.laptop}){
+    font-size: 0.7rem;
+  }
 `;
 
 const IconeMenuMobile = styled(IoMdMenu)`
@@ -231,17 +254,32 @@ const SegundoNome = styled.p`
   font-family: 'Courier New', Courier, monospace;
 `;
 
-function Menu({setOpenMenu}) {
+const DivIconeBotaoMenuPrincipal = styled.div`
+  height: 3%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+`;
+const IconeBotaoMenuPrincipal = styled(AiOutlineCaretLeft)`
+  color: #FFF;
+  cursor: pointer;
+`;
 
+function Menu({setOpenMenu, OpenMenuMain, setOpenMenuMain}) {
 
     return(
-      <NavMenuContainer>
+      <NavMenuContainer OpenMenuMain={OpenMenuMain}>
         <DivNomeLateral>
           <PrimeiroNome>Fernando</PrimeiroNome>
           <SegundoNome>Bertolo</SegundoNome>
         </DivNomeLateral>
         <IconeMenuMobile onClick={() => setOpenMenu(true)}/>
 
+        <DivIconeBotaoMenuPrincipal>
+            <IconeBotaoMenuPrincipal onClick={() => setOpenMenuMain(true)}/>       
+        </DivIconeBotaoMenuPrincipal>
+    
         <DivMenuOpcoes>
           <DivBotoes>
             <LinkButton to={"/"}><IconeHome/>Home</LinkButton>
