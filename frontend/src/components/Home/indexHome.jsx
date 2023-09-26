@@ -4,6 +4,7 @@ import { useState } from "react";
 import MenuMobile from "../MenuLateral/MenuLateralMobile/MenuMobile.jsx";
 import { BiLogoReact } from "react-icons/bi";
 import { device } from "../MenuLateral/menuLateral.jsx";
+import { AiOutlineCaretRight } from "react-icons/ai";
 
 export const App = styled.div`
   width: 100vw;
@@ -78,7 +79,18 @@ const DivIconeReact = styled.div`
 const LogoReact = styled(BiLogoReact)`
   width: 20rem;
   height: 20rem;
-  color: #07bc0c;
+  color: #28bab1;
+
+  @media (${device.tablet}) {
+    display: none;
+  }
+`;
+
+const IconeBotaoMenuPrincipalOpen = styled(AiOutlineCaretRight)`
+  color: #fff;
+  cursor: pointer;
+  width: 1.5rem;
+  height: 1.5rem;
 
   @media (${device.tablet}) {
     display: none;
@@ -95,6 +107,7 @@ function Home() {
       <MenuMobile OpenMenu={OpenMenu} setOpenMenu={setOpenMenu} />
 
       <DivTelaMain>
+        <IconeBotaoMenuPrincipalOpen onClick={() => setOpenMenuMain(false)} />
         <DivApresentacao>
           <TextoApresentacao1>Olá, sou</TextoApresentacao1>
           <TextoApresentacao2>Fernando Bertolo.</TextoApresentacao2>

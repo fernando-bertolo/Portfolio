@@ -9,6 +9,7 @@ import { AiOutlineLinkedin } from "react-icons/ai";
 import { FaGithubSquare } from "react-icons/fa";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { AiOutlineCaretLeft } from "react-icons/ai";
+import { AiOutlineCaretRight } from "react-icons/ai";
 import { styled, css } from "styled-components";
 
 // Setando variaveis dos tamanhos dos dispositivos para responsividade
@@ -32,20 +33,24 @@ const NavMenuContainer = styled.nav`
   width: 10vw;
   height: 100vh;
   background-color: #2f2841;
+  opacity: 1;
 
   ${({ OpenMenuMain }) =>
-    OpenMenuMain &&
+    OpenMenuMain === true &&
     css`
-      pointer-events: auto;
+      width: 0;
+      background-color: black;
       animation: CloseMenuMain 0.4s;
 
       @keyframes CloseMenuMain {
         from {
           width: 10vw;
+          opacity: 1;
+          pointer-events: auto;
         }
         to {
-          width: 0vw;
-          position: fixed;
+          width: 0px;
+          opacity: 0;
         }
       }
     `}
@@ -237,91 +242,107 @@ const DivIconeBotaoMenuPrincipal = styled.div`
     display: none;
   }
 `;
-const IconeBotaoMenuPrincipal = styled(AiOutlineCaretLeft)`
+const IconeBotaoMenuPrincipalClose = styled(AiOutlineCaretLeft)`
   color: #fff;
   cursor: pointer;
+  width: 1.5rem;
+  height: 1.5rem;
 
   @media (${device.tablet}) {
     display: none;
   }
 `;
 
+// const IconeBotaoMenuPrincipalOpen = styled(AiOutlineCaretRight)`
+//   color: #fff;
+//   cursor: pointer;
+//   width: 1.5rem;
+//   height: 1.5rem;
+
+//   @media (${device.tablet}) {
+//     display: none;
+//   }
+// `;
+
 function Menu({ OpenMenuMain, setOpenMenuMain }) {
   return (
-    <NavMenuContainer OpenMenuMain={OpenMenuMain}>
-      <DivNomeLateral>
-        <PrimeiroNome>Fernando</PrimeiroNome>
-        <SegundoNome>Bertolo</SegundoNome>
-      </DivNomeLateral>
+    <>
+      {/* <IconeBotaoMenuPrincipalOpen onClick={() => setOpenMenuMain(false)} /> */}
+      <NavMenuContainer OpenMenuMain={OpenMenuMain}>
+        <DivNomeLateral>
+          <PrimeiroNome>Fernando</PrimeiroNome>
+          <SegundoNome>Bertolo</SegundoNome>
+        </DivNomeLateral>
 
-      <DivIconeBotaoMenuPrincipal>
-        <IconeBotaoMenuPrincipal onClick={() => setOpenMenuMain(true)} />
-      </DivIconeBotaoMenuPrincipal>
+        <DivIconeBotaoMenuPrincipal>
+          <IconeBotaoMenuPrincipalClose onClick={() => setOpenMenuMain(true)} />
+        </DivIconeBotaoMenuPrincipal>
 
-      <DivMenuOpcoes>
-        <DivBotoes>
-          <LinkButton to={"/"}>
-            <IconeHome />
-            Home
-          </LinkButton>
-        </DivBotoes>
+        <DivMenuOpcoes>
+          <DivBotoes>
+            <LinkButton to={"/"}>
+              <IconeHome />
+              Home
+            </LinkButton>
+          </DivBotoes>
 
-        <DivBotoes>
-          <LinkButton to={"/sobre-Mim"}>
-            <IconeSobre />
-            Sobre Mim
-          </LinkButton>
-        </DivBotoes>
+          <DivBotoes>
+            <LinkButton to={"/sobre-Mim"}>
+              <IconeSobre />
+              Sobre Mim
+            </LinkButton>
+          </DivBotoes>
 
-        <DivBotoes>
-          <LinkButton to={"/curriculo"}>
-            <IconeCurriculo />
-            Curriculo
-          </LinkButton>
-        </DivBotoes>
+          <DivBotoes>
+            <LinkButton to={"/curriculo"}>
+              <IconeCurriculo />
+              Curriculo
+            </LinkButton>
+          </DivBotoes>
 
-        <DivBotoes>
-          <LinkButton to={"/certificados"}>
-            <IconeCertificados />
-            Certificados
-          </LinkButton>
-        </DivBotoes>
+          <DivBotoes>
+            <LinkButton to={"/certificados"}>
+              <IconeCertificados />
+              Certificados
+            </LinkButton>
+          </DivBotoes>
 
-        <DivBotoes>
-          <LinkButton to={"/projetos"}>
-            <IconeProjeto />
-            Projetos
-          </LinkButton>
-        </DivBotoes>
+          <DivBotoes>
+            <LinkButton to={"/projetos"}>
+              <IconeProjeto />
+              Projetos
+            </LinkButton>
+          </DivBotoes>
 
-        <DivBotoes>
-          <LinkButton to={"/contato"}>
-            <IconeContato />
-            Contato
-          </LinkButton>
-        </DivBotoes>
-      </DivMenuOpcoes>
+          <DivBotoes>
+            <LinkButton to={"/contato"}>
+              <IconeContato />
+              Contato
+            </LinkButton>
+          </DivBotoes>
+        </DivMenuOpcoes>
 
-      <DivMenuEnd>
-        <DivRedesSociais>
-          <a
-            href="https://www.linkedin.com/in/fernandobertolojr/"
-            target="_blank"
-          >
-            <IconeLinkedin />
-          </a>
-          <a href="https://github.com/fernando-bertolo" target="_blank">
-            <IconeGitHub />
-          </a>
-          <a href="https://instagram.com/bertol0" target="_blank">
-            <IconeInstagram />
-          </a>
-        </DivRedesSociais>
-        <DivCopy>
-          <ParagrafoCopy>@ 2023 Bertolo</ParagrafoCopy>
-        </DivCopy>
-      </DivMenuEnd>
-    </NavMenuContainer>
+        <DivMenuEnd>
+          <DivRedesSociais>
+            <a
+              href="https://www.linkedin.com/in/fernandobertolojr/"
+              target="_blank"
+            >
+              <IconeLinkedin />
+            </a>
+            <a href="https://github.com/fernando-bertolo" target="_blank">
+              <IconeGitHub />
+            </a>
+            <a href="https://instagram.com/bertol0" target="_blank">
+              <IconeInstagram />
+            </a>
+          </DivRedesSociais>
+          <DivCopy>
+            <ParagrafoCopy>@ 2023 Bertolo</ParagrafoCopy>
+          </DivCopy>
+        </DivMenuEnd>
+      </NavMenuContainer>
+    </>
   );
 }
 
