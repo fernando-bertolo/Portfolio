@@ -1,10 +1,10 @@
 import Menu from "../MenuLateral/menuLateral.jsx";
-import { styled } from "styled-components";
+import { styled, css, keyframes } from "styled-components";
 import { useState } from "react";
 import MenuMobile from "../MenuLateral/MenuLateralMobile/MenuMobile.jsx";
 import { BiLogoReact } from "react-icons/bi";
 import { device } from "../MenuLateral/menuLateral.jsx";
-import { AiOutlineCaretRight } from "react-icons/ai";
+import { IoIosArrowForward } from "react-icons/io";
 
 export const App = styled.div`
   width: 100vw;
@@ -38,11 +38,11 @@ const DivTelaMain = styled.div`
 const DivApresentacao = styled.div`
   width: 30vw;
   height: 50vh;
-  /* background-color: pink; */
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
+  flex-grow: calc();
   padding-left: 2rem;
 
   @media (${device.tablet}) {
@@ -52,21 +52,33 @@ const DivApresentacao = styled.div`
 
 const TextoApresentacao1 = styled.p`
   color: #fff;
-  font-size: 2rem;
+  font-size: clamp(1vw, 1.5vw, 3vw);
+  
+  @media (${device.tablet}) {
+    font-size: clamp(4vw, 6vw, 8vw);
+  }
 `;
 const TextoApresentacao2 = styled.p`
   color: #fff;
-  font-size: 4rem;
+  font-size: clamp(1vw, 3vw, 6vw);
+
+  @media(${device.tablet}){
+    font-size: clamp(8vw, 10vw, 12vw);
+  }
+
 `;
 const TextoApresentacao3 = styled.p`
   color: #fff;
-  font-size: 2rem;
+  font-size: clamp(1vw, 1.5vw, 3vw);
+
+  @media (${device.tablet}) {
+    font-size: clamp(4vw, 6vw, 8vw);
+  }
 `;
 
 const DivIconeReact = styled.div`
   width: 30vw;
   height: 50vh;
-  /* background-color: red; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,8 +89,8 @@ const DivIconeReact = styled.div`
 `;
 
 const LogoReact = styled(BiLogoReact)`
-  width: 20rem;
-  height: 20rem;
+  width: clamp(10rem, 20rem, 30rem);
+  height: clamp(10rem, 20rem, 30rem);
   color: #28bab1;
 
   @media (${device.tablet}) {
@@ -86,16 +98,32 @@ const LogoReact = styled(BiLogoReact)`
   }
 `;
 
-const IconeBotaoMenuPrincipalOpen = styled(AiOutlineCaretRight)`
+const IconeBotaoMenuPrincipalOpen = styled(IoIosArrowForward)`
   color: #fff;
   cursor: pointer;
   width: 1.5rem;
   height: 1.5rem;
+  display: flex;
+  justify-content: center;
+  left: 0;
 
   @media (${device.tablet}) {
     display: none;
   }
+
+  ${({OpenMenuMain}) => OpenMenuMain === false && css`
+    display: none;
+  `}
 `;
+
+
+const DivIconeBotaoOpen = styled.div`
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 
 function Home() {
   const [OpenMenu, setOpenMenu] = useState(false);
@@ -105,16 +133,18 @@ function Home() {
     <App>
       <Menu OpenMenuMain={OpenMenuMain} setOpenMenuMain={setOpenMenuMain} />
       <MenuMobile OpenMenu={OpenMenu} setOpenMenu={setOpenMenu} />
-
+      <DivIconeBotaoOpen>
+        <IconeBotaoMenuPrincipalOpen onClick={() => setOpenMenuMain(false)} OpenMenuMain={OpenMenuMain}/>
+      </DivIconeBotaoOpen>
       <DivTelaMain>
-        <IconeBotaoMenuPrincipalOpen onClick={() => setOpenMenuMain(false)} />
+        
         <DivApresentacao>
           <TextoApresentacao1>Olá, sou</TextoApresentacao1>
           <TextoApresentacao2>Fernando Bertolo.</TextoApresentacao2>
           <TextoApresentacao3>Desenvolvedor FullStack</TextoApresentacao3>
         </DivApresentacao>
         <DivIconeReact>
-          <LogoReact />
+          <LogoReact/>
         </DivIconeReact>
       </DivTelaMain>
     </App>

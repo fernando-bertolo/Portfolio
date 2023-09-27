@@ -8,8 +8,7 @@ import { HiOutlineEnvelope } from "react-icons/hi2";
 import { AiOutlineLinkedin } from "react-icons/ai";
 import { FaGithubSquare } from "react-icons/fa";
 import { AiOutlineInstagram } from "react-icons/ai";
-import { AiOutlineCaretLeft } from "react-icons/ai";
-import { AiOutlineCaretRight } from "react-icons/ai";
+import { IoIosArrowBack } from "react-icons/io";
 import { styled, css } from "styled-components";
 
 // Setando variaveis dos tamanhos dos dispositivos para responsividade
@@ -39,10 +38,9 @@ const NavMenuContainer = styled.nav`
     OpenMenuMain === true &&
     css`
       width: 0;
-      background-color: black;
-      animation: CloseMenuMain 0.4s;
+      animation: CloseMenu 0.4s;
 
-      @keyframes CloseMenuMain {
+      @keyframes CloseMenu {
         from {
           width: 10vw;
           opacity: 1;
@@ -114,7 +112,7 @@ const DivBotoes = styled.div`
 
 const LinkButton = styled(Link)`
   color: #fff;
-  font-size: 1rem;
+  font-size: clamp(0.9vw, 1.1vw, 1.5vw);
   text-decoration: none;
   display: flex;
   flex-direction: column;
@@ -185,6 +183,10 @@ const DivRedesSociais = styled.div`
   display: flex;
   justify-content: center;
   gap: 0.7rem;
+
+  @media(${device.laptop}){
+    gap: 0.4rem;
+  }
 `;
 
 //Icones Redes Socias Menu Lateral
@@ -212,15 +214,17 @@ const DivCopy = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  ${({OpenMenuMain}) => OpenMenuMain === true && css` // consertando a quebra de pagina quando fecha o menu
+    display: none;
+  `}
+
 `;
 
 const ParagrafoCopy = styled.p`
-  font-size: 1rem;
+  font-size: clamp(0.5vw, 1vw, 1.2vw);
   color: gray;
 
-  @media (${device.laptop}) {
-    font-size: 0.7rem;
-  }
 `;
 
 const PrimeiroNome = styled.p`
@@ -242,7 +246,7 @@ const DivIconeBotaoMenuPrincipal = styled.div`
     display: none;
   }
 `;
-const IconeBotaoMenuPrincipalClose = styled(AiOutlineCaretLeft)`
+const IconeBotaoMenuPrincipalClose = styled(IoIosArrowBack)`
   color: #fff;
   cursor: pointer;
   width: 1.5rem;
@@ -253,21 +257,10 @@ const IconeBotaoMenuPrincipalClose = styled(AiOutlineCaretLeft)`
   }
 `;
 
-// const IconeBotaoMenuPrincipalOpen = styled(AiOutlineCaretRight)`
-//   color: #fff;
-//   cursor: pointer;
-//   width: 1.5rem;
-//   height: 1.5rem;
-
-//   @media (${device.tablet}) {
-//     display: none;
-//   }
-// `;
 
 function Menu({ OpenMenuMain, setOpenMenuMain }) {
   return (
     <>
-      {/* <IconeBotaoMenuPrincipalOpen onClick={() => setOpenMenuMain(false)} /> */}
       <NavMenuContainer OpenMenuMain={OpenMenuMain}>
         <DivNomeLateral>
           <PrimeiroNome>Fernando</PrimeiroNome>
@@ -337,7 +330,7 @@ function Menu({ OpenMenuMain, setOpenMenuMain }) {
               <IconeInstagram />
             </a>
           </DivRedesSociais>
-          <DivCopy>
+          <DivCopy OpenMenuMain={OpenMenuMain}>
             <ParagrafoCopy>@ 2023 Bertolo</ParagrafoCopy>
           </DivCopy>
         </DivMenuEnd>
