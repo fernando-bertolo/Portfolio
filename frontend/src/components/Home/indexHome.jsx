@@ -1,5 +1,5 @@
 import Menu from "../MenuLateral/menuLateral.jsx";
-import { styled, css, keyframes } from "styled-components";
+import { styled, css} from "styled-components";
 import { useState } from "react";
 import MenuMobile from "../MenuLateral/MenuLateralMobile/MenuMobile.jsx";
 import { BiLogoReact } from "react-icons/bi";
@@ -24,7 +24,8 @@ export const App = styled.div`
 const DivTelaMain = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: black;
+  background-color: rgb(17, 14, 27);
+  /* background-color: rgba(51, 41, 79, 0.9); */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -98,7 +99,7 @@ const LogoReact = styled(BiLogoReact)`
   }
 `;
 
-const IconeBotaoMenuPrincipalOpen = styled(IoIosArrowForward)`
+export const IconeBotaoMenuPrincipalOpen = styled(IoIosArrowForward)`
   color: #fff;
   cursor: pointer;
   width: 1.5rem;
@@ -117,12 +118,13 @@ const IconeBotaoMenuPrincipalOpen = styled(IoIosArrowForward)`
 `;
 
 
-const DivIconeBotaoOpen = styled.div`
+export const DivIconeBotaoOpen = styled.div`
   background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
+
 
 
 function Home() {
