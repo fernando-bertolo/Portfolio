@@ -280,7 +280,7 @@ function Menu({ OpenMenuMain, setOpenMenuMain }) {
           </DivBotoes>
 
           <DivBotoes>
-            <LinkButton to={"/sobre-Mim"}>
+            <LinkButton to={"/sobre-mim"}>
               <IconeSobre />
               Sobre Mim
             </LinkButton>

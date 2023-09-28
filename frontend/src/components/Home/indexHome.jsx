@@ -99,7 +99,7 @@ const LogoReact = styled(BiLogoReact)`
   }
 `;
 
-const IconeBotaoMenuPrincipalOpen = styled(IoIosArrowForward)`
+export const IconeBotaoMenuPrincipalOpen = styled(IoIosArrowForward)`
   color: #fff;
   cursor: pointer;
   width: 1.5rem;
@@ -118,12 +118,13 @@ const IconeBotaoMenuPrincipalOpen = styled(IoIosArrowForward)`
 `;
 
 
-const DivIconeBotaoOpen = styled.div`
+export const DivIconeBotaoOpen = styled.div`
   background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
+
 
 
 function Home() {
