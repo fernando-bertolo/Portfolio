@@ -1,5 +1,5 @@
 import Menu from "../MenuLateral/menuLateral.jsx";
-import { styled, css} from "styled-components";
+import { styled, css } from "styled-components";
 import { useState } from "react";
 import MenuMobile from "../MenuLateral/MenuLateralMobile/MenuMobile.jsx";
 import { BiLogoReact } from "react-icons/bi";
@@ -25,7 +25,6 @@ const DivTelaMain = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: rgb(17, 14, 27);
-  /* background-color: rgba(51, 41, 79, 0.9); */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,7 +53,7 @@ const DivApresentacao = styled.div`
 const TextoApresentacao1 = styled.p`
   color: #fff;
   font-size: clamp(1vw, 1.5vw, 3vw);
-  
+
   @media (${device.tablet}) {
     font-size: clamp(4vw, 6vw, 8vw);
   }
@@ -63,10 +62,9 @@ const TextoApresentacao2 = styled.p`
   color: #fff;
   font-size: clamp(1vw, 3vw, 6vw);
 
-  @media(${device.tablet}){
+  @media (${device.tablet}) {
     font-size: clamp(8vw, 10vw, 12vw);
   }
-
 `;
 const TextoApresentacao3 = styled.p`
   color: #fff;
@@ -112,11 +110,12 @@ export const IconeBotaoMenuPrincipalOpen = styled(IoIosArrowForward)`
     display: none;
   }
 
-  ${({OpenMenuMain}) => OpenMenuMain === false && css`
-    display: none;
-  `}
+  ${({ OpenMenuMain }) =>
+    OpenMenuMain === false &&
+    css`
+      display: none;
+    `}
 `;
-
 
 export const DivIconeBotaoOpen = styled.div`
   background-color: black;
@@ -124,8 +123,6 @@ export const DivIconeBotaoOpen = styled.div`
   justify-content: center;
   align-items: center;
 `;
-
-
 
 function Home() {
   const [OpenMenu, setOpenMenu] = useState(false);
@@ -136,17 +133,19 @@ function Home() {
       <Menu OpenMenuMain={OpenMenuMain} setOpenMenuMain={setOpenMenuMain} />
       <MenuMobile OpenMenu={OpenMenu} setOpenMenu={setOpenMenu} />
       <DivIconeBotaoOpen>
-        <IconeBotaoMenuPrincipalOpen onClick={() => setOpenMenuMain(false)} OpenMenuMain={OpenMenuMain}/>
+        <IconeBotaoMenuPrincipalOpen
+          onClick={() => setOpenMenuMain(false)}
+          OpenMenuMain={OpenMenuMain}
+        />
       </DivIconeBotaoOpen>
       <DivTelaMain>
-        
         <DivApresentacao>
           <TextoApresentacao1>Olá, sou</TextoApresentacao1>
           <TextoApresentacao2>Fernando Bertolo.</TextoApresentacao2>
           <TextoApresentacao3>Desenvolvedor FullStack</TextoApresentacao3>
         </DivApresentacao>
         <DivIconeReact>
-          <LogoReact/>
+          <LogoReact />
         </DivIconeReact>
       </DivTelaMain>
     </App>
