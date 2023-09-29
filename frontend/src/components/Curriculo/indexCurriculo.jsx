@@ -35,7 +35,7 @@ const TextoCurriculo = styled.p`
   @media (min-width: 770px) {
     font-size: clamp(2vw, 3vw, 3.5vw);
   }
-  @media(${device.tablet}){
+  @media (${device.tablet}) {
     font-size: clamp(3vw, 4vw, 4.5vw);
   }
 `;
@@ -46,7 +46,7 @@ const DivExperienciaProfissional = styled.div`
   /* background-color: pink; */
   display: flex;
 
-  @media(${device.tablet}){
+  @media (${device.tablet}) {
     width: 80%;
     height: 50%;
   }
@@ -60,10 +60,10 @@ const DivIcones = styled.div`
   align-items: center;
   flex-direction: column;
 
-  @media(${device.tablet}){
+  @media (${device.tablet}) {
     width: 10%;
   }
-  @media(min-width: 770px) and (max-width:1200px) {
+  @media (min-width: 770px) and (max-width: 1200px) {
     width: 10%;
   }
 `;
@@ -99,7 +99,7 @@ const DivTextoExperiencia = styled.div`
   align-items: flex-start;
   /* background-color: blue; */
 
-  @media(${device.tablet}){
+  @media (${device.tablet}) {
     align-items: center;
   }
 `;
@@ -108,11 +108,14 @@ const TextoExperiencia = styled.p`
   color: #fff;
   font-size: clamp(1vw, 1.3vw, 1.5vw);
 
-  @media (min-width: 770px) {
-    font-size: clamp(1.5vw, 2vw, 2.5vw);
+  @media (min-width: 770px) and (max-width: 1200px) {
+    font-size: clamp(2vw, 2.3vw, 3.5vw);
   }
-  @media(${device.tablet}){
-    font-size: clamp(2vw, 3.5vw, 4vw);
+  @media (max-width: 490px) {
+    font-size: clamp(3vw, 4vw, 4.5vw);
+  }
+  @media (min-width: 490px) and (max-width: 770px) {
+    font-size: clamp(2vw, 2.5vw, 3vw);
   }
 `;
 
@@ -132,19 +135,23 @@ const TextoAnoExperiencia = styled.p`
   color: #fff;
   font-size: 1.5vw;
 
-
-  @media(${device.tablet}){
+  @media (max-width: 490px) {
     font-size: 3vw;
+  }
+  @media (min-width: 490px) and (max-width: 770px) {
+    font-size: clamp(1.5vw, 2vw, 2.5vw);
+  }
+  @media (min-width: 770px) and (max-width: 1200px) {
+    font-size: clamp(1.5vw, 1.7vw, 2.2vw);
   }
 `;
 
 const DivTituloExperiencia = styled.div`
   width: 100%;
   height: 10%;
-  /* background-color: green; */
+  background-color: green;
   display: flex;
   align-items: center;
-
 `;
 
 const TextoTituloExperiencia = styled.p`
@@ -152,8 +159,15 @@ const TextoTituloExperiencia = styled.p`
   font-size: 1vw;
   font-style: italic;
   font-weight: 800;
-  @media(${device.tablet}){
+  @media (max-width: 490px) {
     font-size: clamp(1.5vw, 2vw, 2.5vw);
+  }
+  @media (min-width: 490px) and (max-width: 770px) {
+    font-size: clamp(1vw, 1.5vw, 2vw);
+  }
+
+  @media (min-width: 770px) and (max-width: 1200px) {
+    font-size: clamp(1vw, 1.3vw, 2vw);
   }
 `;
 
@@ -175,10 +189,17 @@ const NomeEmpresa = styled.p`
   font-size: 1vw;
   padding-left: 1rem;
 
-  @media(${device.tablet}){
+  @media (max-width: 490px) {
     font-size: clamp(1.5vw, 2vw, 2.5vw);
   }
 
+  @media (min-width: 490px) and (max-width: 770px) {
+    font-size: clamp(1vw, 1.5vw, 2vw);
+  }
+
+  @media (min-width: 770px) and (max-width: 1200px) {
+    font-size: clamp(1vw, 1.1vw, 2vw);
+  }
 `;
 
 const DivTextoSuporte = styled.div`
@@ -194,8 +215,14 @@ const TextoSuporte = styled.p`
   color: #fff;
   font-size: 1vw;
 
-  @media(${device.tablet}){
+  @media (max-width: 490px) {
     font-size: clamp(1.5vw, 2vw, 2.5vw);
+  }
+  @media (min-width: 490px) and (max-width: 770px) {
+    font-size: clamp(1vw, 1.5vw, 2vw);
+  }
+  @media (min-width: 770px) and (max-width: 1200px) {
+    font-size: clamp(1vw, 1.1vw, 2vw);
   }
 `;
 
@@ -206,14 +233,17 @@ const DivConhecimentoTecnico = styled.div`
 `;
 
 const TextoConhecimentoTecnico = styled.p`
-  color: #FFF;
+  color: #fff;
   font-size: 1vw;
   padding-left: 1rem;
+  @media (min-width: 770px) and (max-width: 1200px) {
+    font-size: clamp(1vw, 1vw, 2vw);
+  }
 
-  @media(min-width: 490px) and (max-width: 768px){
+  @media (min-width: 490px) and (max-width: 768px) {
     font-size: clamp(1vw, 1.6vw, 2vw);
   }
-  @media(max-width: 490px){
+  @media (max-width: 490px) {
     font-size: clamp(1.5vw, 2vw, 2.5vw);
   }
 `;
@@ -260,7 +290,9 @@ function Curriculo() {
               <TextoExperiencia>Experiências Profissionais</TextoExperiencia>
             </DivTextoExperiencia>
             <DivAnoExperiencia>
-              <TextoAnoExperiencia>Agosto de 2022 / Até o momento</TextoAnoExperiencia>
+              <TextoAnoExperiencia>
+                Agosto de 2022 / Até o momento
+              </TextoAnoExperiencia>
             </DivAnoExperiencia>
             <DivTituloExperiencia>
               <TextoTituloExperiencia>
@@ -269,7 +301,9 @@ function Curriculo() {
             </DivTituloExperiencia>
             <DivTextoProfissao>
               <DivNomeEmpresa>
-                <NomeEmpresa>Atuando na <i>BluePex® CyberSecurity</i> no Suporte Técnico</NomeEmpresa>
+                <NomeEmpresa>
+                  Atuando na <i>BluePex® CyberSecurity</i> no Suporte Técnico
+                </NomeEmpresa>
               </DivNomeEmpresa>
               <DivTextoSuporte>
                 <TextoSuporte>
@@ -280,38 +314,44 @@ function Curriculo() {
 
               <DivConhecimentoTecnico>
                 <TextoConhecimentoTecnico>
-                - Conhecimento técnico em Firewall, EndPoint, Backup e E-mail
+                  - Conhecimento técnico em Firewall, EndPoint, Backup e E-mail
                 </TextoConhecimentoTecnico>
-
 
                 <TextoConhecimentoTecnico>
                   - Configurações de servidores DHCP, DNS, Active Directory
                 </TextoConhecimentoTecnico>
 
-
                 <TextoConhecimentoTecnico>
-                 - Configurações e gerenciamento de regras de firewall
+                  - Configurações e gerenciamento de regras de firewall
                 </TextoConhecimentoTecnico>
 
                 <TextoConhecimentoTecnico>
-                  - Análise de regras de Firewall, orientando as alterações necessárias para uma maior segurança
+                  - Análise de regras de Firewall, orientando as alterações
+                  necessárias para uma maior segurança
                 </TextoConhecimentoTecnico>
                 <TextoConhecimentoTecnico>
-                  - Configuração de regras de redirecionamento de porta(externo/interno).
-                </TextoConhecimentoTecnico>
-                
-                <TextoConhecimentoTecnico>
-                  - Configurações de Proxy e monitoramento para verificar a filtragem necessária de navegação a se fazer.
+                  - Configuração de regras de redirecionamento de
+                  porta(externo/interno).
                 </TextoConhecimentoTecnico>
 
                 <TextoConhecimentoTecnico>
-                  - Configuração de VPN OpenVPN(Client to Site), VPN IPsec(Site to Site), VPN OpenVPN com o serviço de gerenciamento de rotas BGP/FRR(Site to Site) assim interligando possíveis filiais através destas configurações.
+                  - Configurações de Proxy e monitoramento para verificar a
+                  filtragem necessária de navegação a se fazer.
+                </TextoConhecimentoTecnico>
+
+                <TextoConhecimentoTecnico>
+                  - Configuração de VPN OpenVPN(Client to Site), VPN IPsec(Site
+                  to Site), VPN OpenVPN com o serviço de gerenciamento de rotas
+                  BGP/FRR(Site to Site) assim interligando possíveis filiais
+                  através destas configurações.
                 </TextoConhecimentoTecnico>
                 <TextoConhecimentoTecnico>
-                  - Configurações de LoadBalance e FailOver para estabelecer uma redundância entre links de internet.
+                  - Configurações de LoadBalance e FailOver para estabelecer uma
+                  redundância entre links de internet.
                 </TextoConhecimentoTecnico>
                 <TextoConhecimentoTecnico>
-                  - Segmentação de rede através de VLAN's- Conhecimentos em terminais linux.
+                  - Segmentação de rede através de VLAN's- Conhecimentos em
+                  terminais linux.
                 </TextoConhecimentoTecnico>
               </DivConhecimentoTecnico>
             </DivTextoProfissao>
