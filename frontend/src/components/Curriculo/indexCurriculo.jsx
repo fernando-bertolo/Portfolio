@@ -32,25 +32,40 @@ const DivTextoCurriculo = styled.div`
 const TextoCurriculo = styled.p`
   color: #fff;
   font-size: 2vw;
-  @media (${device.laptop}) {
-    font-size: 3vw;
+  @media (min-width: 770px) {
+    font-size: clamp(2vw, 3vw, 3.5vw);
+  }
+  @media(${device.tablet}){
+    font-size: clamp(3vw, 4vw, 4.5vw);
   }
 `;
 
 const DivExperienciaProfissional = styled.div`
   width: 60%;
-  height: 50%;
-  background-color: pink;
+  height: 60%;
+  /* background-color: pink; */
   display: flex;
+
+  @media(${device.tablet}){
+    width: 80%;
+    height: 50%;
+  }
 `;
 
 const DivIcones = styled.div`
-  width: 5%;
+  width: 10%;
   height: 100%;
-  background-color: red;
+  /* background-color: red; */
   display: flex;
   align-items: center;
   flex-direction: column;
+
+  @media(${device.tablet}){
+    width: 10%;
+  }
+  @media(min-width: 770px) and (max-width:1200px) {
+    width: 10%;
+  }
 `;
 
 const DivLinha = styled.div`
@@ -74,45 +89,62 @@ const IconeCirculoMenor = styled(BsFillCircleFill)`
 const DivConteudo = styled.div`
   width: 100%;
   height: 100%;
-  background-color: gold;
+  /* background-color: gold; */
 `;
 
 const DivTextoExperiencia = styled.div`
   width: 100%;
-  height: 10%;
+  height: 8%;
   display: flex;
   align-items: flex-start;
-  background-color: blue;
+  /* background-color: blue; */
+
+  @media(${device.tablet}){
+    align-items: center;
+  }
 `;
 
 const TextoExperiencia = styled.p`
   color: #fff;
   font-size: clamp(1vw, 1.3vw, 1.5vw);
 
-  @media (${device.laptop}) {
+  @media (min-width: 770px) {
     font-size: clamp(1.5vw, 2vw, 2.5vw);
+  }
+  @media(${device.tablet}){
+    font-size: clamp(2vw, 3.5vw, 4vw);
   }
 `;
 
 const DivAnoExperiencia = styled.div`
   width: 100%;
-  height: 10%;
-  background-color: orange;
+  height: 12%;
+  /* background-color: orange; */
   display: flex;
   align-items: flex-end;
+
+  @media (min-width: 770px) {
+    height: 9%;
+  }
 `;
 
 const TextoAnoExperiencia = styled.p`
   color: #fff;
   font-size: 1.5vw;
+
+
+  @media(${device.tablet}){
+    font-size: 3vw;
+  }
 `;
 
 const DivTituloExperiencia = styled.div`
   width: 100%;
   height: 10%;
-  background-color: green;
+  /* background-color: green; */
   display: flex;
   align-items: center;
+
 `;
 
 const TextoTituloExperiencia = styled.p`
@@ -120,12 +152,15 @@ const TextoTituloExperiencia = styled.p`
   font-size: 1vw;
   font-style: italic;
   font-weight: 800;
+  @media(${device.tablet}){
+    font-size: clamp(1.5vw, 2vw, 2.5vw);
+  }
 `;
 
 const DivTextoProfissao = styled.div`
   width: 100%;
   height: 70%;
-  background-color: brown;
+  /* background-color: brown; */
 `;
 
 const DivNomeEmpresa = styled.p`
@@ -133,23 +168,17 @@ const DivNomeEmpresa = styled.p`
   height: 10%;
   display: flex;
   align-items: center;
-  background-color: gray;
+  /* background-color: gray; */
 `;
 const NomeEmpresa = styled.p`
   color: #fff;
   font-size: 1vw;
   padding-left: 1rem;
-`;
 
-const DivNomeSetor = styled.p`
-  width: 100%;
-  height: 10%;
-  background-color: aqua;
-`;
-const NomeSetor = styled.p`
-  color: #fff;
-  font-size: 1vw;
-  padding-left: 1rem;
+  @media(${device.tablet}){
+    font-size: clamp(1.5vw, 2vw, 2.5vw);
+  }
+
 `;
 
 const DivTextoSuporte = styled.div`
@@ -158,18 +187,35 @@ const DivTextoSuporte = styled.div`
   display: flex;
   align-items: center;
   padding-left: 1rem;
-  background-color: pink;
+  /* background-color: pink; */
 `;
 
 const TextoSuporte = styled.p`
   color: #fff;
   font-size: 1vw;
+
+  @media(${device.tablet}){
+    font-size: clamp(1.5vw, 2vw, 2.5vw);
+  }
 `;
 
 const DivConhecimentoTecnico = styled.div`
   width: 100%;
-  width: 30%;
-  background-color: orange;
+  height: 65%;
+  /* background-color: orange; */
+`;
+
+const TextoConhecimentoTecnico = styled.p`
+  color: #FFF;
+  font-size: 1vw;
+  padding-left: 1rem;
+
+  @media(min-width: 490px) and (max-width: 768px){
+    font-size: clamp(1vw, 1.6vw, 2vw);
+  }
+  @media(max-width: 490px){
+    font-size: clamp(1.5vw, 2vw, 2.5vw);
+  }
 `;
 
 function Curriculo() {
@@ -206,6 +252,7 @@ function Curriculo() {
             <DivLinha />
             <DivLinha />
             <DivLinha />
+            <IconeCirculoMenor />
           </DivIcones>
 
           <DivConteudo>
@@ -213,7 +260,7 @@ function Curriculo() {
               <TextoExperiencia>Experiências Profissionais</TextoExperiencia>
             </DivTextoExperiencia>
             <DivAnoExperiencia>
-              <TextoAnoExperiencia>2022</TextoAnoExperiencia>
+              <TextoAnoExperiencia>Agosto de 2022 / Até o momento</TextoAnoExperiencia>
             </DivAnoExperiencia>
             <DivTituloExperiencia>
               <TextoTituloExperiencia>
@@ -222,11 +269,8 @@ function Curriculo() {
             </DivTituloExperiencia>
             <DivTextoProfissao>
               <DivNomeEmpresa>
-                <NomeEmpresa>BluePex® CyberSecurity</NomeEmpresa>
+                <NomeEmpresa>Atuando na <i>BluePex® CyberSecurity</i> no Suporte Técnico</NomeEmpresa>
               </DivNomeEmpresa>
-              <DivNomeSetor>
-                <NomeSetor>Suporte Técnico</NomeSetor>
-              </DivNomeSetor>
               <DivTextoSuporte>
                 <TextoSuporte>
                   Realizo atendimento aos clientes diariamente e através disto
@@ -234,7 +278,42 @@ function Curriculo() {
                 </TextoSuporte>
               </DivTextoSuporte>
 
-              <DivConhecimentoTecnico></DivConhecimentoTecnico>
+              <DivConhecimentoTecnico>
+                <TextoConhecimentoTecnico>
+                - Conhecimento técnico em Firewall, EndPoint, Backup e E-mail
+                </TextoConhecimentoTecnico>
+
+
+                <TextoConhecimentoTecnico>
+                  - Configurações de servidores DHCP, DNS, Active Directory
+                </TextoConhecimentoTecnico>
+
+
+                <TextoConhecimentoTecnico>
+                 - Configurações e gerenciamento de regras de firewall
+                </TextoConhecimentoTecnico>
+
+                <TextoConhecimentoTecnico>
+                  - Análise de regras de Firewall, orientando as alterações necessárias para uma maior segurança
+                </TextoConhecimentoTecnico>
+                <TextoConhecimentoTecnico>
+                  - Configuração de regras de redirecionamento de porta(externo/interno).
+                </TextoConhecimentoTecnico>
+                
+                <TextoConhecimentoTecnico>
+                  - Configurações de Proxy e monitoramento para verificar a filtragem necessária de navegação a se fazer.
+                </TextoConhecimentoTecnico>
+
+                <TextoConhecimentoTecnico>
+                  - Configuração de VPN OpenVPN(Client to Site), VPN IPsec(Site to Site), VPN OpenVPN com o serviço de gerenciamento de rotas BGP/FRR(Site to Site) assim interligando possíveis filiais através destas configurações.
+                </TextoConhecimentoTecnico>
+                <TextoConhecimentoTecnico>
+                  - Configurações de LoadBalance e FailOver para estabelecer uma redundância entre links de internet.
+                </TextoConhecimentoTecnico>
+                <TextoConhecimentoTecnico>
+                  - Segmentação de rede através de VLAN's- Conhecimentos em terminais linux.
+                </TextoConhecimentoTecnico>
+              </DivConhecimentoTecnico>
             </DivTextoProfissao>
           </DivConteudo>
         </DivExperienciaProfissional>
