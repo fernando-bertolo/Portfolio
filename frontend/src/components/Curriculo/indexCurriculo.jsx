@@ -9,6 +9,14 @@ import {
 import styled from "styled-components";
 import { device } from "../MenuLateral/menuLateral.jsx";
 import { BsFillCircleFill } from "react-icons/bs";
+import {
+  BiLogoNodejs,
+  BiLogoCss3,
+  BiLogoJavascript,
+  BiLogoReact,
+} from "react-icons/bi";
+import { AiFillHtml5 } from "react-icons/ai";
+import { SiMysql } from "react-icons/si";
 
 const DivTelaMain = styled.div`
   width: 100vw;
@@ -33,7 +41,7 @@ const TextoCurriculo = styled.p`
   color: #fff;
   font-size: 2vw;
   @media (min-width: 770px) {
-    font-size: clamp(2vw, 3vw, 3.5vw);
+    font-size: clamp(2vw, 2.5vw, 3.5vw);
   }
   @media (${device.tablet}) {
     font-size: clamp(3vw, 4vw, 4.5vw);
@@ -149,7 +157,7 @@ const TextoAnoExperiencia = styled.p`
 const DivTituloExperiencia = styled.div`
   width: 100%;
   height: 10%;
-  background-color: green;
+  /* background-color: green; */
   display: flex;
   align-items: center;
 `;
@@ -241,10 +249,168 @@ const TextoConhecimentoTecnico = styled.p`
   }
 
   @media (min-width: 490px) and (max-width: 768px) {
-    font-size: clamp(1vw, 1.6vw, 2vw);
+    font-size: clamp(1vw, 1.4vw, 2vw);
   }
   @media (max-width: 490px) {
-    font-size: clamp(1.5vw, 2vw, 2.5vw);
+    font-size: clamp(1.4vw, 1.8vw, 2.5vw);
+  }
+`;
+
+const DivMainHabilidades = styled.div`
+  width: 80%;
+  height: 25%;
+  /* background-color: pink; */
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 35%;
+  }
+`;
+
+const DivTituloHabilidade = styled.div`
+  width: 100%;
+  height: 20%;
+  /* background-color: orange; */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  @media (max-width: 768px) {
+    height: 10%;
+  }
+`;
+
+const TituloHabilidade = styled.p`
+  color: #fff;
+  font-size: 2vw;
+
+  @media (max-width: 370px) {
+    font-size: clamp(3.5vw, 4vw, 5vw);
+  }
+  @media (min-width: 370px) and (max-width: 768px) {
+    font-size: clamp(2vw, 2.5vw, 2.6vw);
+  }
+`;
+
+const DivMainIcones = styled.div`
+  width: 100%;
+  height: 100%;
+  /* background-color: blue; */
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+`;
+
+const DivIconesHabilidades = styled.p`
+  width: 15%;
+  height: 50%;
+  background-color: #d9d9d9;
+  border-radius: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 1rem;
+
+  @media (max-width: 768px) {
+    height: 30%;
+  }
+`;
+
+const DivIconesDentro = styled.div`
+  width: 60%;
+  height: 60%;
+  /* background-color: black; */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+`;
+
+const IconeHTML = styled(AiFillHtml5)`
+  color: #ff0000;
+  width: 6vw;
+  height: 6vh;
+
+  @media (max-width: 370px) {
+    width: 10vw;
+    height: 10vw;
+  }
+`;
+
+const DivParagrafoDescricao = styled.p`
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  /* background-color: pink; */
+`;
+
+const ParagrafoDescricaoSkill = styled.p`
+  color: black;
+  font-size: 1vw;
+
+  @media (max-width: 370px) {
+    font-size: clamp(2.5vw, 3vw, 4vw);
+  }
+
+  @media (min-width: 370px) and (max-width: 768px) {
+    font-size: clamp(1.5vw, 1.8vw, 2.2vw);
+  }
+`;
+
+const IconeCSS = styled(BiLogoCss3)`
+  color: #0000ff;
+  width: 6vw;
+  height: 6vh;
+
+  @media (max-width: 370px) {
+    width: 10vw;
+    height: 10vw;
+  }
+`;
+
+const IconeJavascript = styled(BiLogoJavascript)`
+  color: #f0db4f;
+  width: 6vw;
+  height: 6vh;
+
+  @media (max-width: 370px) {
+    width: 10vw;
+    height: 10vw;
+  }
+`;
+
+const IconeReact = styled(BiLogoReact)`
+  color: #28bab1;
+  width: 6vw;
+  height: 6vh;
+
+  @media (max-width: 370px) {
+    width: 10vw;
+    height: 10vw;
+  }
+`;
+
+const IconeNodeJS = styled(BiLogoNodejs)`
+  color: #44883e;
+  width: 6vw;
+  height: 6vh;
+
+  @media (max-width: 370px) {
+    width: 10vw;
+    height: 10vw;
+  }
+`;
+
+const IconeMYSQL = styled(SiMysql)`
+  color: #44883e;
+  width: 6vw;
+  height: 6vh;
+
+  @media (max-width: 370px) {
+    width: 10vw;
+    height: 10vw;
   }
 `;
 
@@ -357,6 +523,72 @@ function Curriculo() {
             </DivTextoProfissao>
           </DivConteudo>
         </DivExperienciaProfissional>
+        <DivMainHabilidades>
+          <DivTituloHabilidade>
+            <TituloHabilidade>Habilidades</TituloHabilidade>
+          </DivTituloHabilidade>
+          <DivMainIcones>
+            {/* Divisão Habilidade HTML */}
+            <DivIconesHabilidades>
+              <DivIconesDentro>
+                <IconeHTML />
+              </DivIconesDentro>
+              <DivParagrafoDescricao>
+                <ParagrafoDescricaoSkill>HTML</ParagrafoDescricaoSkill>
+              </DivParagrafoDescricao>
+            </DivIconesHabilidades>
+
+            {/* Divisão Habilidade CSS */}
+            <DivIconesHabilidades>
+              <DivIconesDentro>
+                <IconeCSS />
+              </DivIconesDentro>
+              <DivParagrafoDescricao>
+                <ParagrafoDescricaoSkill>CSS</ParagrafoDescricaoSkill>
+              </DivParagrafoDescricao>
+            </DivIconesHabilidades>
+
+            {/* Divisão Habilidade JavaScript */}
+            <DivIconesHabilidades>
+              <DivIconesDentro>
+                <IconeJavascript />
+              </DivIconesDentro>
+              <DivParagrafoDescricao>
+                <ParagrafoDescricaoSkill>JavasScript</ParagrafoDescricaoSkill>
+              </DivParagrafoDescricao>
+            </DivIconesHabilidades>
+
+            {/* Divisão Habilidade ReactJS */}
+            <DivIconesHabilidades>
+              <DivIconesDentro>
+                <IconeReact />
+              </DivIconesDentro>
+              <DivParagrafoDescricao>
+                <ParagrafoDescricaoSkill>ReactJS</ParagrafoDescricaoSkill>
+              </DivParagrafoDescricao>
+            </DivIconesHabilidades>
+
+            {/* Divisão Habilidade NodeJS */}
+            <DivIconesHabilidades>
+              <DivIconesDentro>
+                <IconeNodeJS />
+              </DivIconesDentro>
+              <DivParagrafoDescricao>
+                <ParagrafoDescricaoSkill>NodeJS</ParagrafoDescricaoSkill>
+              </DivParagrafoDescricao>
+            </DivIconesHabilidades>
+
+            {/* Divisão Habilidade MYSQL */}
+            <DivIconesHabilidades>
+              <DivIconesDentro>
+                <IconeMYSQL />
+              </DivIconesDentro>
+              <DivParagrafoDescricao>
+                <ParagrafoDescricaoSkill>MySQL</ParagrafoDescricaoSkill>
+              </DivParagrafoDescricao>
+            </DivIconesHabilidades>
+          </DivMainIcones>
+        </DivMainHabilidades>
       </DivTelaMain>
     </App>
   );
