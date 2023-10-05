@@ -39,11 +39,11 @@ const DivTextoCurriculo = styled.div`
 
 const TextoCurriculo = styled.p`
   color: #fff;
-  font-size: 2vw;
+  font-size: 1.5vw;
   @media (min-width: 770px) {
-    font-size: clamp(2vw, 2.5vw, 3.5vw);
+    font-size: 1.5vw;
   }
-  @media (${device.tablet}) {
+  @media (max-width: 768px) {
     font-size: clamp(3vw, 4vw, 4.5vw);
   }
 `;
@@ -249,10 +249,10 @@ const TextoConhecimentoTecnico = styled.p`
   }
 
   @media (min-width: 490px) and (max-width: 768px) {
-    font-size: clamp(1vw, 1.4vw, 2vw);
+    font-size: clamp(1vw, 1.8vw, 2vw);
   }
   @media (max-width: 490px) {
-    font-size: clamp(1.4vw, 1.8vw, 2.5vw);
+    font-size: clamp(1.4vw, 2vw, 2.5vw);
   }
 `;
 
@@ -282,13 +282,13 @@ const DivTituloHabilidade = styled.div`
 
 const TituloHabilidade = styled.p`
   color: #fff;
-  font-size: 2vw;
+  font-size: 1.5vw;
 
   @media (max-width: 370px) {
     font-size: clamp(3.5vw, 4vw, 5vw);
   }
   @media (min-width: 370px) and (max-width: 768px) {
-    font-size: clamp(2vw, 2.5vw, 2.6vw);
+    font-size: clamp(3vw, 4vw, 4.5vw);
   }
 `;
 
@@ -299,7 +299,14 @@ const DivMainIcones = styled.div`
   display: flex;
   justify-content: flex-start;
   gap: 1rem;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
+
+  @media(max-width: 768px){
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    /* overflow: auto; */
+  }
 `;
 
 const DivIconesHabilidades = styled.p`
@@ -313,9 +320,16 @@ const DivIconesHabilidades = styled.p`
   flex-direction: column;
   margin-top: 1rem;
 
-  @media (max-width: 768px) {
+  @media(max-width: 768px){
+    width: 20%;
     height: 30%;
   }
+
+  &:hover{
+    transform: scale(0.9);
+    box-shadow: -5px 5px 15px #fff;
+  }
+
 `;
 
 const DivIconesDentro = styled.div`
@@ -332,7 +346,7 @@ const IconeHTML = styled(AiFillHtml5)`
   width: 6vw;
   height: 6vh;
 
-  @media (max-width: 370px) {
+  @media (max-width: 500px) {
     width: 10vw;
     height: 10vw;
   }
@@ -350,12 +364,12 @@ const ParagrafoDescricaoSkill = styled.p`
   color: black;
   font-size: 1vw;
 
-  @media (max-width: 370px) {
+  @media (max-width: 500px) {
     font-size: clamp(2.5vw, 3vw, 4vw);
   }
 
-  @media (min-width: 370px) and (max-width: 768px) {
-    font-size: clamp(1.5vw, 1.8vw, 2.2vw);
+  @media (min-width: 500px) and (max-width: 768px) {
+    font-size: clamp(1.8vw, 2.3vw, 2.8vw);
   }
 `;
 
@@ -364,7 +378,7 @@ const IconeCSS = styled(BiLogoCss3)`
   width: 6vw;
   height: 6vh;
 
-  @media (max-width: 370px) {
+  @media (max-width: 500px) {
     width: 10vw;
     height: 10vw;
   }
@@ -375,7 +389,7 @@ const IconeJavascript = styled(BiLogoJavascript)`
   width: 6vw;
   height: 6vh;
 
-  @media (max-width: 370px) {
+  @media (max-width: 500px) {
     width: 10vw;
     height: 10vw;
   }
@@ -386,7 +400,7 @@ const IconeReact = styled(BiLogoReact)`
   width: 6vw;
   height: 6vh;
 
-  @media (max-width: 370px) {
+  @media (max-width: 500px) {
     width: 10vw;
     height: 10vw;
   }
@@ -397,7 +411,7 @@ const IconeNodeJS = styled(BiLogoNodejs)`
   width: 6vw;
   height: 6vh;
 
-  @media (max-width: 370px) {
+  @media (max-width: 500px) {
     width: 10vw;
     height: 10vw;
   }
@@ -408,7 +422,7 @@ const IconeMYSQL = styled(SiMysql)`
   width: 6vw;
   height: 6vh;
 
-  @media (max-width: 370px) {
+  @media (max-width: 500px) {
     width: 10vw;
     height: 10vw;
   }
