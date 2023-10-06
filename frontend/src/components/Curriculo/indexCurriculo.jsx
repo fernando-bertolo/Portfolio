@@ -301,7 +301,7 @@ const DivMainIcones = styled.div`
   gap: 1rem;
   /* flex-wrap: wrap; */
 
-  @media(max-width: 768px){
+  @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
@@ -320,16 +320,15 @@ const DivIconesHabilidades = styled.p`
   flex-direction: column;
   margin-top: 1rem;
 
-  @media(max-width: 768px){
+  @media (max-width: 768px) {
     width: 20%;
     height: 30%;
   }
 
-  &:hover{
+  &:hover {
     transform: scale(0.9);
-    box-shadow: -5px 5px 15px #fff;
+    box-shadow: 0px 0px 5px #fff;
   }
-
 `;
 
 const DivIconesDentro = styled.div`
