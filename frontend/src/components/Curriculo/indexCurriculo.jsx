@@ -249,7 +249,7 @@ const TextoConhecimentoTecnico = styled.p`
   }
 
   @media (min-width: 490px) and (max-width: 768px) {
-    font-size: clamp(1vw, 1.8vw, 2vw);
+    font-size: clamp(1vw, 1.6vw, 2vw);
   }
   @media (max-width: 490px) {
     font-size: clamp(1.4vw, 2vw, 2.5vw);

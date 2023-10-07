@@ -28,16 +28,20 @@ const DivConteudo = styled.div`
   height: 60vh;
   flex-direction: column;
   background-color: rgba(51, 41, 79, 0.9);
-  box-shadow: -5px 5px 30px #fff;
+  box-shadow: 0px 0px 15px #fff;
   border-radius: 10px;
 
-  @media (${device.tablet}) {
+  @media (max-width: 768px) {
     width: 80vw;
     height: 80vw;
   }
 
-  @media (min-width: 768px) and (max-width: 1024px) {
+  @media (min-width: 769px) and (max-width: 1200px) {
     width: 60vw;
+  }
+
+  @media (min-width: 1201px) {
+    width: 40vw;
   }
 `;
 
@@ -95,13 +99,16 @@ const TextoMain = styled.p`
   padding-top: 2rem;
   line-height: 2rem;
   font-size: clamp(1vw, 1.1vw, 1.2vw);
-  @media (${device.tablet}) {
+  @media (max-width: 768px) {
     font-size: clamp(2vw, 3vw, 4vw);
     line-height: normal;
   }
 
-  @media (min-width: 768px) and (max-width: 1024px) {
-    font-size: clamp(1vw, 2vw, 2.5vw);
+  @media (min-width: 770px) and (max-width: 1200px) {
+    font-size: clamp(1vw, 1.5vw, 2.5vw);
+  }
+  @media (min-width: 1201px) {
+    font-size: clamp(0.9vw, 1vw, 1.2vw);
   }
 `;
 
