@@ -23,7 +23,6 @@ const DivTelaMain = styled.div`
   height: 100vh;
   background-color: rgb(17, 14, 27);
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   flex-direction: column;
 `;
@@ -40,11 +39,13 @@ const DivTextoCurriculo = styled.div`
 const TextoCurriculo = styled.p`
   color: #fff;
   font-size: 1.5vw;
-  @media (min-width: 770px) {
-    font-size: 1.5vw;
-  }
+
   @media (max-width: 768px) {
     font-size: clamp(3vw, 4vw, 4.5vw);
+  }
+
+  @media (min-width: 770px) and (max-width: 1200px) {
+    font-size: 3vw;
   }
 `;
 
