@@ -494,7 +494,7 @@ function Curriculo() {
               </DivNomeEmpresa>
               <DivTextoSuporte>
                 <TextoSuporte>
-                  Realizo atendimento aos clientes diariamente e através disto
+                  Realizo atendimento aos clientes diariamente e através disso
                   adquiri diversos conhecimentos, tais como:
                 </TextoSuporte>
               </DivTextoSuporte>
@@ -523,14 +523,14 @@ function Curriculo() {
 
                 <TextoConhecimentoTecnico>
                   - Configurações de Proxy e monitoramento para verificar a
-                  filtragem necessária de navegação a se fazer.
+                  filtragem necessária de navegação a ser feita.
                 </TextoConhecimentoTecnico>
 
                 <TextoConhecimentoTecnico>
                   - Configuração de VPN OpenVPN(Client to Site), VPN IPsec(Site
                   to Site), VPN OpenVPN com o serviço de gerenciamento de rotas
                   BGP/FRR(Site to Site) assim interligando possíveis filiais
-                  através destas configurações.
+                  através dessas configurações.
                 </TextoConhecimentoTecnico>
                 <TextoConhecimentoTecnico>
                   - Configurações de LoadBalance e FailOver para estabelecer uma
