@@ -7,6 +7,7 @@ import Certificados from "./components/Certificados/indexCertificados.jsx";
 import Projetos from "./components/Projetos/indexProjetos.jsx";
 import Contato from "./components/Contato/indexContato.jsx";
 import PortFolioWeb from "./components/Projetos/ProjetoPortFolio/indexProjetoPortFolio.jsx";
+import ProjetoTCC from "./components/Projetos/ProjetoTCC/indexProjetoTCC.jsx";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <Route path="/projetos" element={<Projetos/>}/>
       <Route path="/contato" element={<Contato/>}/>
       <Route path="/portfolio-web" element={<PortFolioWeb/>}/>
+      <Route path="projeto-tcc" element={<ProjetoTCC/>}/>
     </Routes>
   );
 }
