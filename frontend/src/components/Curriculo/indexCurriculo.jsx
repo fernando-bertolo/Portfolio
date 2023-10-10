@@ -18,12 +18,15 @@ import {
 import { AiFillHtml5 } from "react-icons/ai";
 import { SiMysql } from "react-icons/si";
 
+
+// Styled-Components
+
+
 const DivTelaMain = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: rgb(17, 14, 27);
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   flex-direction: column;
 `;
@@ -40,11 +43,13 @@ const DivTextoCurriculo = styled.div`
 const TextoCurriculo = styled.p`
   color: #fff;
   font-size: 1.5vw;
-  @media (min-width: 770px) {
-    font-size: 1.5vw;
-  }
+
   @media (max-width: 768px) {
     font-size: clamp(3vw, 4vw, 4.5vw);
+  }
+
+  @media (min-width: 770px) and (max-width: 1200px) {
+    font-size: 3vw;
   }
 `;
 
@@ -309,7 +314,7 @@ const DivMainIcones = styled.div`
   }
 `;
 
-const DivIconesHabilidades = styled.p`
+const DivIconesHabilidades = styled.div`
   width: 15%;
   height: 50%;
   background-color: #d9d9d9;

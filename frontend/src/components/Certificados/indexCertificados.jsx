@@ -30,7 +30,7 @@ const DivMainTextoCertificados = styled.div`
 
 const TextoCertificado = styled.p`
   color: #fff;
-  font-size: 2vw;
+  font-size: 1.5vw;
 
   @media(max-width: 768px){
     font-size:  clamp(4vw, 5vw, 5.5vw);
