@@ -188,7 +188,7 @@ const DivIconesDentro = styled.div`
   /* background-color: black; */
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
 `;
 
 const DivParagrafoDescricao = styled.p`
@@ -244,6 +244,11 @@ const ReactRouter = styled.img`
     width: 10vw;
     height: 10vw;
   }
+
+  @media (min-width: 501px) and (max-width: 768px) {
+    width: 6vw;
+    height: 6vw;
+  }
 `;
 
 const StyledComponents = styled.img`
@@ -253,6 +258,11 @@ const StyledComponents = styled.img`
     @media (max-width: 500px) {
     width: 10vw;
     height: 10vw;
+  }
+
+  @media (min-width: 501px) and (max-width: 768px) {
+    width: 6vw;
+    height: 6vw;
   }
 `;
 

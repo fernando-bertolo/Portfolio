@@ -150,9 +150,11 @@ function Projetos() {
 
                     {/* Projeto 1 */}
                     <DivProjetos>
-                        <DivInteriorProjeto>
-                            <TextoInterior>Em desenvolvimento</TextoInterior>
-                        </DivInteriorProjeto>
+                        <LinkButton to={"/projeto-tcc"}>
+                            <DivInteriorProjeto>
+                                <TextoInterior>Em desenvolvimento</TextoInterior>
+                            </DivInteriorProjeto>
+                        </LinkButton>        
                         <DivInteriorProjetoTexto>
                             <TextoInterior>Software Automotivo - TCC</TextoInterior>    
                         </DivInteriorProjetoTexto>

@@ -16,7 +16,7 @@ import {
   BiLogoReact,
 } from "react-icons/bi";
 import { AiFillHtml5 } from "react-icons/ai";
-import { SiMysql } from "react-icons/si";
+import ImagemMYSQL from "../Projetos/Images/mysql.svg"
 
 
 // Styled-Components
@@ -421,14 +421,17 @@ const IconeNodeJS = styled(BiLogoNodejs)`
   }
 `;
 
-const IconeMYSQL = styled(SiMysql)`
-  color: #44883e;
+const IconeMYSQL = styled.img`
   width: 6vw;
   height: 6vh;
 
   @media (max-width: 500px) {
-    width: 10vw;
-    height: 10vw;
+    width: 15vw;
+    height: 11vw;
+  }
+  @media(min-width: 501px) and (max-width: 768px) {
+    width: 13vw;
+    height: 9vw;
   }
 `;
 
@@ -599,7 +602,7 @@ function Curriculo() {
             {/* Divisão Habilidade MYSQL */}
             <DivIconesHabilidades>
               <DivIconesDentro>
-                <IconeMYSQL />
+                <IconeMYSQL src={ImagemMYSQL} />
               </DivIconesDentro>
               <DivParagrafoDescricao>
                 <ParagrafoDescricaoSkill>MySQL</ParagrafoDescricaoSkill>

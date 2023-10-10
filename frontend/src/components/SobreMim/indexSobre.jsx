@@ -148,7 +148,7 @@ function Sobre() {
               com o técnico em informática no colégio técnico de limeira (COTIL)
               e partir desta etapa me interessei pelo desenvolvimento de
               sistemas. Em 2022 iniciei o curso de Análise e Desenvolvimento de
-              Sistemas na Faculade Integrada Einstein de Limeira - FIEL.
+              Sistemas na Faculdade Integrada Einstein de Limeira - FIEL.
             </TextoMain>
           </DivTextoMain>
         </DivConteudo>
